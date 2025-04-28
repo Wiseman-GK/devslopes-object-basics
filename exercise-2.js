@@ -25,5 +25,28 @@ const papaJohns = {
 };
 
 // DO NOT EDIT THE ABOVE OBJECT // 
+function grabCategories(object) {
+  return Object.keys(object);
+}
 
+console.log(grabCategories(papaJohns));
+
+console.log(grabCategories(papaJohns.pizzaToppings));
+
+function verifyValues(object, numVal) {
+  return Object.values(object).length === numVal;
+}
+
+console.log(verifyValues(papaJohns, 2));
+console.log(verifyValues(papaJohns, 9));
+
+function getToppingsInfo(obj1, key) {
+  return Object.entries(obj1[key]);
+}
+console.log(getToppingsInfo(papaJohns, 'pizzaToppings'));
+
+papaJohns.printAd = function (topping) {
+  return `Welcome to ${papaJohns.name}. We are located at ${papaJohns.address}. This week we are having a sale on ${topping} for $${papaJohns.pizzaToppings[topping]}. ${papaJohns.slogan}`;
+};
+console.log(papaJohns.printAd('bacon'));
 // YOUR WORK GOES HERE // 
